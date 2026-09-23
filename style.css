@@ -1,0 +1,568 @@
+/* =========================================================
+   TEMA: DEEP EMERALD & VIOLET TECH (MODEN & DINAMIK)
+   Disesuaikan khas untuk index.html Intan Nur Syuhada
+   ========================================================= */
+
+/* 1. Pembolehubah Warna & Asas */
+:root {
+    --bg-dark: #0a0e17;             /* Latar belakang utama */
+    --card-bg: #131b2e;             /* Warna latar kad */
+    --emerald-glow: #10b981;        /* Hijau Zamrud Moden */
+    --emerald-light: #34d399;
+    --violet-accent: #8b5cf6;       /* Ungu Violet */
+    --rose-accent: #f43f5e;         /* Merah Jambu Accent */
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-subtle: rgba(139, 92, 246, 0.25);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.7;
+    padding-top: 80px; /* Ruang supaya kandungan tidak tertutup di bawah nav */
+    overflow-x: hidden;
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
+}
+
+/* 2. Navigasi Bar (TOOLBAR - DIPASTIKAN SENTIASA KELIHATAN) */
+nav {
+    background: rgba(10, 14, 23, 0.95) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 75px !important;
+    z-index: 999999 !important; /* Memastikan toolbar berada di atas sekali */
+    padding: 0 5% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--emerald-light), var(--violet-accent));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex !important;
+    list-style: none !important;
+    gap: 1.2rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    color: var(--text-muted) !important;
+    text-decoration: none !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--emerald-light) !important;
+    text-shadow: 0 0 8px rgba(52, 211, 153, 0.4);
+}
+
+/* 3. Container & Seksyen Utama */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.bg-alt {
+    background-color: rgba(19, 27, 46, 0.5);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+/* 4. Tajuk Seksyen & Teks Gradien */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--emerald-light) 0%, var(--violet-accent) 50%, var(--rose-accent) 100%);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 3rem;
+}
+
+.highlight {
+    color: var(--emerald-light);
+}
+
+.subsection-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--emerald-light);
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.6rem;
+}
+
+.subsection-title i {
+    color: var(--violet-accent);
+}
+
+/* 5. Hero Section */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 620px;
+    margin: 0 auto 2rem auto;
+}
+
+.btn {
+    background: linear-gradient(135deg, var(--emerald-glow) 0%, var(--violet-accent) 100%);
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.8rem 1.8rem;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+}
+
+/* 6. Bahagian Tentang Saya (About) */
+.about-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.profile-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid var(--violet-accent);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    transition: all 0.4s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.02);
+    border-color: var(--emerald-light);
+}
+
+.about-text {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-subtle);
+}
+
+.about-text h3 {
+    font-size: 1.4rem;
+    color: var(--emerald-light);
+    margin-bottom: 1rem;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.skills {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(139, 92, 246, 0.15));
+    color: var(--emerald-light);
+    border: 1px solid var(--border-subtle);
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+/* 7. Bahagian Timeline Pendidikan */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 2rem;
+    border-left: 2px solid var(--violet-accent);
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -7px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--emerald-light);
+    box-shadow: 0 0 10px var(--emerald-light);
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    color: var(--rose-accent);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.timeline-content {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+}
+
+.timeline-content h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.timeline-content h4 {
+    color: var(--emerald-light);
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+/* 8. Galeri & Video Persembahan */
+.performance-intro {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-subtle);
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.gallery-grid, .performance-video-grid, .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.8rem;
+}
+
+.gallery-item, .video-card, .project-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.gallery-item:hover, .video-card:hover, .project-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--emerald-light);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+}
+
+.gallery-item img, .project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-caption, .video-info, .project-info {
+    padding: 1.2rem;
+}
+
+.gallery-caption h4, .video-info h4, .project-info h3 {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+}
+
+.gallery-caption p, .video-info p, .project-info p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+video {
+    width: 100%;
+    display: block;
+    background-color: #000;
+}
+
+.video-wrapper, .video-container {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+}
+
+.video-wrapper video {
+    max-height: 480px;
+}
+
+/* ==========================================
+   9. Inovasi RPMB Section (Kemaskini Gambar)
+   ========================================== */
+
+/* ==========================================
+   9. Inovasi RPMB Section (Gambar + Teks Sebelah)
+   ========================================== */
+
+.innovation-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    align-items: center; /* Memastikan gambar dan teks sejajar di tengah secara menegak */
+    gap: 2rem;           /* Jarak antara gambar dan teks */
+    width: 100%;
+}
+
+.innovation-card img {
+    width: 250px;        /* Lebar tetap untuk gambar */
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;      /* Halang gambar daripada mengecil */
+}
+
+/* Memastikan bahagian teks mengambil semua ruang kosong yang ada */
+.innovation-info {
+    flex-grow: 1;
+}
+
+.badge {
+    background: rgba(139, 92, 246, 0.2);
+    color: var(--violet-accent);
+    border: 1px solid var(--violet-accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+}
+
+.innovation-info h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.8rem;
+}
+
+.innovation-info p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+}
+
+.innovation-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.innovation-features li {
+    color: var(--text-primary);
+    font-size: 0.88rem;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.innovation-features i {
+    color: var(--emerald-light);
+}
+
+/* Responsif: Apabila skrin telefon bimbit, baru susun ke bawah */
+@media (max-width: 768px) {
+    .innovation-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .innovation-card img {
+        width: 100%;
+    }
+}
+
+/* 10. Tags Projek */
+.tags {
+    margin-top: 0.8rem;
+    display: flex;
+    gap: 0.4rem;
+}
+
+.tags span {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--emerald-light);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+}
+
+/* 11. Bahagian Hubungi & Footer */
+.contact-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 1.2rem 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    min-width: 240px;
+}
+
+.contact-card i {
+    font-size: 1.8rem;
+    color: var(--emerald-light);
+    transition: transform 0.3s ease;
+}
+
+.contact-card h4 {
+    font-size: 1rem;
+}
+
+.contact-card p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--emerald-light);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.2);
+}
+
+.contact-card:hover i {
+    transform: scale(1.15) rotate(8deg);
+    color: var(--violet-accent);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border-subtle);
+    margin-top: 3rem;
+    background-color: rgba(10, 14, 23, 0.95);
+}
+
+/* Responsive View (Untuk Paparan Kecil / Skrin Telefon) */
+@media (max-width: 850px) {
+    nav {
+        flex-direction: column !important;
+        height: auto !important;
+        padding: 0.8rem !important;
+    }
+    .nav-links {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 0.6rem 1rem !important;
+        margin-top: 0.4rem !important;
+    }
+    .about-grid, .innovation-card {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .container {
+        padding: 2.5rem 1.2rem;
+    }
+}
